@@ -1,4 +1,4 @@
-{% extends "flights/layout.html" %}
+{% extends "layout.html" %}
 {% block body %}
 <h1>Flights {{ flight.id }}
     <ul>
@@ -17,7 +17,7 @@
     <li>No passengers</li>
     {% endfor %}
 </ul>
-<h2>Add oassenger</h2>
+<h2>Add passenger</h2>
 
 <form action="{% url 'book' flight.id %}" method="post">
 {% csrf_token %}
@@ -28,5 +28,5 @@
 </select>
 <input type="submit">
 </form>
-<a href="{% url 'index' %}">Back to Flight List</a>
+<a href="{% url 'flights' %}">Back to Flight List</a>
 {% endblock %}

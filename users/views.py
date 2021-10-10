@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "users/user.html" )
+    return render(request, "login.html" )
 
 def login_view(request):
     if request.method == "POST":
@@ -17,15 +17,15 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("login"))
         else:
-            return render(request, "users/login.html",{
+            return render(request, "login.html",{
                 "message": "Invalid credentials"
             })
-    return render(request, "users/login.html")
+    return render(request, "userloged.html")
 
 def logout_view(request):
     logout(request)
-    return render(request, "users/login.html",{
+    return render(request, "login.html",{
         "message": "Logged out"
     })
