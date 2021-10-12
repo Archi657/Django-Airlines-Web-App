@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
     {% if message %}
        <div>{{  message }}</div>
     {% endif %}
-<form action="{% url 'login' %}" method="post">
+<form class="formulario"action="{% url 'login' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
+    <div class="input-contenedor">
+        <input type="text" name="username" placeholder="Username">
+    
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </div>
 </form>
 
 {% endblock %}
