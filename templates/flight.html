@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 {% block body %}
 <h1>Flights {{ flight.id }}
@@ -29,4 +30,6 @@
 <input type="submit">
 </form>
 <a href="{% url 'flights' %}">Back to Flight List</a>
+
+<a href="{% url 'logout' %}">Log Out</a>
 {% endblock %}

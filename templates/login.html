@@ -1,15 +1,28 @@
 {% extends "layout.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
 
 {% block body %}
 
     {% if message %}
        <div>{{  message }}</div>
     {% endif %}
-<form action="{% url 'login' %}" method="post">
+<form class="formulario"action="{% url 'login' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
+    <div class="container">
+        <div class="input-container">
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="input-container">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+            <input type="submit" value="Login"class="button-login">
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nesciunt cum sequi?</p>
 </form>
-
+<div class="text-box">
+    <p>Welcome to </p>
+    <h1>Django Airlines</h1>
+    <h3>We ofer you the best flights, at the best price with the security you need!</h3>
+</div>
 {% endblock %}
