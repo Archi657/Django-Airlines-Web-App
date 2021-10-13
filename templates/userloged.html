@@ -1,13 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <h1>Welcome a, {{ request.user.first_name }}</h1>
+{% csrf_token %}
+<div class="text-box">
+    <p>Welcome</p>
+    <h1>{{ request.user.first_name }}</h1>
+    <h3>You don't have any flights booked</h3>
+</div>
 
     <ul>
         <li>Username: {{ request.user.username }}</li>
-        <li>Email: {{ request.user.email }}</li>
+        
     </ul>
+    
+
+<!-- 
+    <li>Email: {{ request.user.email }}</li>
     <a href="{% url 'logout' %}">Log Out</a>
-    <a href="{% url 'flights'  %}">Flights</a>
+    <a href="{% url 'flights'  %}">Flights</a>-->
 {% endblock %}
