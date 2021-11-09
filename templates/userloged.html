@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{% csrf_token %}
+<!-- if user = loged = true show everything if not -->
 <div class="text-box">
     <p>Welcome</p>
     <h1>{{ request.user.first_name }}</h1>

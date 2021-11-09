@@ -1,12 +1,7 @@
 {% extends "layout.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
-
 {% block body %}
-
-    {% if message %}
-       <div>{{  message }}</div>
-    {% endif %}
+ 
 <form class="formulario"action="{% url 'login' %}" method="post">
     {% csrf_token %}
     <div class="container">
@@ -17,8 +12,11 @@
             <input type="password" name="password" placeholder="Password">
         </div>
             <input type="submit" value="Login"class="button-login">
+        {% if message %}
+            <div class="message">{{  message }}</div>
+         {% endif %}
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nesciunt cum sequi?</p>
+    <p>lorem12</p>
 </form>
 <div class="text-box">
     <p>Welcome to </p>

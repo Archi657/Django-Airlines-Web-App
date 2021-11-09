@@ -113,6 +113,10 @@ input[type="password"]{
 .button-login:hover{
     background: chocolate;
 }
+.message{
+    text-align: center;
+    margin-left: 29px;
+}
 @media(min-width:768px){
     .formulario{
         margin: auto;
