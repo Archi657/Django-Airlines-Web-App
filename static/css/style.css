@@ -120,3 +120,126 @@ input[type="password"]{
         border-radius:2%;
     }
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d78;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .titlexd{
+      text-align: center;
+      color: white;
+  }
+  .ulflights{
+      position:  absolute;
+      width: 850px;
+      margin: 150px ,auto 10;
+      padding: 100px;
+      box-sizing: border-box;
+  }
+
+  .ulflights li{
+      display: flex;
+      background: rgba(189, 129, 32, .1);
+      padding:  100px, 120px;
+      color: rgb(5, 16, 22);
+      margin: 5px 0;
+      transition: .5s;
+  }
+  .ulflights li:nth-child(1){
+      background: rgba(206, 226, 195, 0.6);
+  }
+
+  .ul li:nth-child(2){
+    background: rgba(206, 226, 195, 0.4);
+}
+.ul li:nth-child(3){
+    background: rgba(206, 226, 195, .2);
+}
+
+.ul li span:nth-child(1){
+    width: 30px;
+}
+
+.ul li span:nth-child(2){
+    width: 200px;
+}
+
+.ul li span:nth-child(3){
+    width: 100px;
+    text-align: right;
+}
+
+.ul li span:nth-child(4){
+    width: 70px;
+    text-align: right;
+}
+
+.ulflights li:hover{
+    transform:   scale(1.06);
+    background: rgb(68, 93, 89);
+}

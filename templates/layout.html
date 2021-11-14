@@ -12,9 +12,9 @@
         <nav>
             <img src="{% static 'images/logo1.png' %}" class="logo">
         <ul>
-            <li><a href="{% url 'login'  %}">Home</a></li>
+            <li><a href="{% url 'home'  %}">Home</a></li>
             <li><a href="{% url 'flights'  %}">Flights</a></li> 
-            <li><a href="">About</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
         </ul>
             <img src="{% static 'images/cart.png' %}" class="cart-icon">

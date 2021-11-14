@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+
+<div class="about-section">
+    <h1>Welcome to Django Airlines {{ request.user.username.capitalize }}</h1>
+    <p>Search and book flies</p>
+    <p>With all the security you need</p>
+  </div>
+  
+  <h2 class="titlexd">Frequent Destinations</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'images/Madrid.jfif' %}" alt="Jane" style="width:100%">
+        <div class="container">
+          <h2>Madrid</h2>
+          <p class="title">España</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>jane@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'images/Bucharest.jfif' %}"  alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Mike Ross</h2>
+          <p class="title">Bucharest</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>mike@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'images/Bogota.jfif' %}" alt="John" style="width:100%">
+        <div class="container">
+          <h2>John Doe</h2>
+          <p class="title">Bogotá</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>john@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

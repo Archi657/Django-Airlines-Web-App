@@ -4,7 +4,13 @@ from django.urls import reverse
 
 from .models import Flight, Passenger
 # Create your views here.
-def index(request):
+def home(request):
+    return render(request, "home.html")
+
+def about(request):
+    return render(request, 'aboutus.html')
+
+def flights(request):
     return render(request, "flights.html",{
         "flights": Flight.objects.all() 
     })
