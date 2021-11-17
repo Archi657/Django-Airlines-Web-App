@@ -11,6 +11,7 @@
     padding: 0 8%;
     position: relative;
 }
+/*Navigator*/
 nav{
     display: flex;
     width: 100;
@@ -56,6 +57,7 @@ nav ul a::after{
 nav ul li a:hover::after{
     width: 50%;
 }
+/* Message in the login */
 .text-box{
     color: #fff;
     position: absolute;
@@ -75,13 +77,14 @@ nav ul li a:hover::after{
     font-size: 20px;
     font-weight: 600;
 }
+/*Form*/
 .container{
     background: rgb(255, 255, 255);
     width: 320px;
     padding: 15px;
 }
 .formulario{
-    background:  2% rgb(255, 255, 255);
+    background:  2% rgba(54, 94, 206, 0.205);
     margin-top: 40px;
     padding: 30px;
     
@@ -142,17 +145,18 @@ body {
   }
   
   .card {
+    background: red;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
   }
-  
-  .about-section {
+  /*Title home section*/
+  .home-section {
     padding: 50px;
     text-align: center;
     background-color: #474e5d78;
     color: white;
   }
-  
+  /**/
   .container {
     padding: 0 16px;
   }
@@ -189,7 +193,7 @@ body {
       display: block;
     }
   }
-
+/* Home */
   .titlexd{
       text-align: center;
       color: white;
