@@ -1,28 +1,24 @@
 from django.db import models
-from django.db.models.fields import related
 
-#from airlinev2 import flights
+class Country(models.Model):
+    name = models.CharField(max_length=15)
+    def __str__(self) :
+        return f"{self.name}"
 
-# Create your models here.
 class Airport(models.Model):
-    code = models.CharField(max_length=3)
-    city = models.CharField(max_length=64)
+    name = models.CharField(max_length=55)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="airports")
 
     def __str__(self):
-        return f"{self.city} ({self.code})"
+        return f"{self.name} from {self.country}"
 
 class Flight(models.Model):
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
-    duration = models.IntegerField()
 
-    def __str__(self):
-        return f"{self.id}: {self.origin} to {self.destination}"
+    departure = models.DateTimeField(auto_now=True) # save it every time, allowing to update the hour.
+    arrival = models.DateTimeField(auto_now=True) 
 
-class Passenger(models.Model):
-    first = models.CharField(max_length=64)
-    last = models.CharField(max_length=64)
-    flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
-
-    def __str__(self) :
-        return f"{self.first} {self.last}"
+class Airplane(models.Model):
+    # user foerign key to each seat.
+    #seat1a = 
