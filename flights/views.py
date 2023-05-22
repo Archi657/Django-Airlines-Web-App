@@ -7,3 +7,8 @@ def home(request):
     flights = Flight.objects.all()
     return render(request, 'flights/home.html', {'countries':countries, 'flights':flights})
 
+def flights(request):
+    return render(request,"flights/flights.html",{
+        "flights": Flight.objects.all(),
+        'countries': Country.objects.all() 
+    })

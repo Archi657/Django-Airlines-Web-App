@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Country(models.Model):
     name = models.CharField(max_length=15)
 
-    def __str__(self) :
+    def __str__(self):
         return f"{self.name}"
 
     class Meta:

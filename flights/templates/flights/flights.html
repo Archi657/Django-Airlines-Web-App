@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+</style>
+
+<div class="home-container">
+    <div>
+        <h2>Countries</h2>
+        <hr>
+        <div>
+            <a href="{% url 'home' %}">All</a>
+        </div>
+        {% for country in countries %}
+            <div>
+                <a href="{% url 'home' %}?q={{country.name}}">{{country.name}}</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2>Flights avaliable</h2>
+        <ul class="ulflights">
+            {% for flight in flights %}
+            <a href="">
+                <li>
+                    <span class="flightid">{{flight.id}}</span>
+                    <span class="origin"> from {{ flight.origin }} </span>
+                    <span class="destiny"> to {{ flight.destination }} </span>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</div>
+{% endblock %}
