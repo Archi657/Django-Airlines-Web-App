@@ -7,7 +7,9 @@
         grid-template-columns: 1fr 3fr;
     }
 </style>
-
+<form action="" method="get">
+    <input type="text" name="q" placeholder="Search for flights....">
+</form>
 <div class="home-container">
     <div>
         <h2>Countries</h2>
@@ -26,10 +28,10 @@
         <h2>Flights avaliable</h2>
         <ul class="ulflights">
             {% for flight in flights %}
-            <a href="">
+            <a href="{% url 'flight' flight.id %}">
                 <li>
-                    <span class="flightid">{{flight.id}}</span>
-                    <span class="origin"> from {{ flight.origin }} </span>
+                    <span class="flightid">100{{flight.id}} -</span>
+                    <span class="origin">- from {{ flight.origin }} </span>
                     <span class="destiny"> to {{ flight.destination }} </span>
                 </li>
             {% endfor %}
