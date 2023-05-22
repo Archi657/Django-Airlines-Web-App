@@ -57,7 +57,7 @@ nav ul a::after{
 nav ul li a:hover::after{
     width: 50%;
 }
-/* Message in the login */
+/* Message in the login_view */
 .text-box{
     color: #fff;
     position: absolute;
@@ -209,7 +209,7 @@ body {
   .ulflights li{
       display: flex;
       background: rgba(189, 129, 32, .1);
-      padding:  100px, 120px;
+      padding: 100px, 120px;
       color: rgb(5, 16, 22);
       margin: 5px 0;
       transition: .5s;
@@ -246,4 +246,8 @@ body {
 .ulflights li:hover{
     transform:   scale(1.06);
     background: rgb(68, 93, 89);
+}
+
+.parent-container-login > input, label {
+    display: block;
 }

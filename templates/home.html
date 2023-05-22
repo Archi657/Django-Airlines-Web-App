@@ -9,8 +9,9 @@
         <h1>Home Page</h1>
 
         <div class="home-container">
-            <h1 class="title">Pablo </h1>
+            {% if user.is_authenticated %}
+            <h1 class="title">Hello, my friend named <span>{{ user.username }}</span> </h1>
+            {% endif %}
         </div>
 
-  
     {% endblock %}

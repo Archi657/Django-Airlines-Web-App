@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<style>
+  .parent-container-login > input, label {
+    display: block;
+  }
+
+</style>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <!-- Login form fields -->
+    <div class="parent-container-login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+{% endblock %}
