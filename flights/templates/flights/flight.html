@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
-
+<form action="{% url 'flight' flight.id %}" method="post">
+    {% csrf_token %}
     <h1>Flight specifc</h1>
     <h1>Flights {{ flight.id }}
         <ul>
@@ -18,6 +19,13 @@
         {% endfor %}
     </ul>
 
-    <Button class="book-button">Book Flight</Button>
-    
+    <input type="hidden" name="user_id" value="{{ request.user.id }}">
+
+    {% if user.is_authenticated %}
+    <Button class="book-button" type="submit" >Book Flight</Button>
+    {% else %}
+    <Button class="book-button-disabled" type="submit" disabled>Book Flight</Button>
+    {% endif %}
+
+</form>
 {% endblock %}

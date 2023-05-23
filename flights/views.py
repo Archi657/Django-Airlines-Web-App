@@ -18,10 +18,15 @@ def flights(request):
 
 
 def flight(request, flight_id):
-    flight = Flight.objects.get(pk=flight_id)
+    flight_object = Flight.objects.get(pk=flight_id)
+    if request.method == "POST":
+        print("here")
+        if request.user.is_authenticated:
+            flight_object.passengers.add(request.user)
+
     return render(request, "flights/flight.html", {
-        "flight": flight,
-        "passengers": flight.passengers.all(),
+        "flight": flight_object,
+        "passengers": flight_object.passengers.all(),
         # "non_passengers": Passenger.objects.exclude(flights=flight).all()
     })
 
@@ -37,6 +42,7 @@ def login_view(request):
             return redirect('home')
         else:
             print("Wrong Credientals!")
+
     return render(request, '../templates/login.html')
 
 
@@ -47,11 +53,4 @@ def logout_view(request):
 
 def about(request):
     return render(request, 'aboutus.html')
-
-
-def book(request, flight_id):
-    if request.method == "POST":
-        flight_object = Flight.objects.get(pk=flight_id)
-        flight_object.passengers.add()
-        return HttpResponseRedirect(reverse("flight", args=(flight_object.id)))
 

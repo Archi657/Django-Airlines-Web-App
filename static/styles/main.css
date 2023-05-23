@@ -105,6 +105,23 @@ input[type="text"] {
     border: none;
     border-radius: 5px;
     margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-button-disabled {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-button:hover {
+    transform: scale(1.06);
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .button-login{
@@ -208,24 +225,24 @@ body {
   .ulflights{
       position:  absolute;
       width: 851px;
-      margin: 150px auto 10px;
       padding: 25px;
       box-sizing: border-box;
   }
 
-  .ulflights li{
-      display: flex;
-      background: rgba(189, 129, 32, .1);
-      padding: 100px 120px;
-      color: rgb(5, 16, 22);
-      margin: 5px 0;
-      transition: .5s;
-  }
-  .ulflights li:nth-child(1){
-      background: rgba(206, 226, 195, 0.6);
-  }
+.ulflights li{
+    display: flex;
+    background: rgba(189, 129, 32, .1);
+    padding: 5px;
+    color: rgb(5, 16, 22);
+    margin: 5px 0;
+    transition: .5s;
+}
 
-  .ul li:nth-child(2){
+.ulflights li:nth-child(1){
+    background: rgba(206, 226, 195, 0.6);
+}
+
+.ul li:nth-child(2){
     background: rgba(206, 226, 195, 0.4);
 }
 .ul li:nth-child(3){
