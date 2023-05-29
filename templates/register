@@ -1,13 +1,11 @@
 {% extends 'main.html' %}
+
 {% block content %}
 
 <form class="form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" id="submit">Login</button>
-    <a href="{% url 'register' %}">
-      Register
-  </a>
+    <button type="submit" id="submit">Register</button>
 </form>
 
 {% endblock %}
